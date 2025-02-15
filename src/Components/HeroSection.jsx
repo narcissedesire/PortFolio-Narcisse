@@ -30,14 +30,16 @@ export default function HeroSection() {
             créer des applications qui allient esthétique et performance.
           </p>
           <div>
-            <button className="px-6 py-3 w-full sm:w-fit rounded-full mr-4 bg-gradient-to-br from-primary-500 via-secondary-500 to-secondary-500 hover:bg-secondary-200 text-white">
+            {/* <button className="px-6 py-3 w-full sm:w-fit rounded-full mr-4 bg-gradient-to-br from-primary-500 via-secondary-500 to-secondary-500 hover:bg-secondary-200 text-white">
               Hire me
-            </button>
-            <button className="px-1 py-1 w-full sm:w-fit rounded-full bg-gradient-to-br from-primary-500 via-secondary-500 to-secondary-500 hover:bg-primary-800 text-white border mt-3">
-              <span className="block bg-[#121212] hover:bg-primary-800 rounded-full px-5 py-2">
-                Download CV
-              </span>
-            </button>
+            </button> */}
+            <a
+              href="/CV/CV-Narcisse-DESIRE.pdf" // Chemin vers le fichier CV dans le dossier public
+              download="CV-Narcisse-DESIRE.pdf"
+              className="px-5 py-3 w-full sm:w-fit rounded-full bg-primary-500 transition-all hover:bg-primary-800 text-white border mt-3"
+            >
+              Télécharge CV
+            </a>
           </div>
         </motion.div>
         <motion.div

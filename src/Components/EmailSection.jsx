@@ -2,32 +2,57 @@ import { Link } from "react-router-dom";
 import React, { useState } from "react";
 import { FaLinkedin } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
+import { toast } from "react-toastify";
 
 export default function EmailSection() {
   const [emailSubmit, setEmailSubmit] = useState(false);
+  const [loading, setLoading] = useState(false); // État de chargement
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true); // Active l'état de chargement
+
     const data = {
       email: e.target.email.value,
       sujet: e.target.sujet.value,
       message: e.target.message.value,
     };
-    const JSONdata = JSON.stringify(data);
 
-    const options = {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSONdata,
-    };
-    const response = await fetch("api/send", options);
-    const resData = await response.json();
+    try {
+      const response = await fetch("http://localhost:5000/api/send", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
 
-    if (resData.status === 200) {
-      console.log("Message envoyé");
-      setEmailSubmit(true);
+      const resData = await response.json();
+
+      if (resData.status === 200) {
+        setEmailSubmit(true);
+        toast.success("E-mail envoyé avec succès !", {
+          position: "top-right",
+          autoClose: 2000,
+          hideProgressBar: true,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+        });
+        e.target.reset();
+      }
+    } catch (error) {
+      console.error("Erreur d'envoi :", error);
+      toast.error("Erreur lors de l'envoi de l'e-mail", {
+        position: "top-right",
+        autoClose: 2000,
+        hideProgressBar: true,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+      });
+    } finally {
+      setLoading(false); // Désactive l'état de chargement
     }
   };
 
@@ -112,14 +137,10 @@ export default function EmailSection() {
           <button
             type="submit"
             className="bg-primary-500 hover:bg-secondary-600 text-white font-medium py-2.5 px-5 rounded-lg w-full"
+            disabled={loading}
           >
-            Envoyer Message
+            {loading ? "Envoi en cours..." : "Envoyer Message"}
           </button>
-          {emailSubmit && (
-            <p className="text-green-500 text-sm mt-2">
-              E-mail envoyé avec succès
-            </p>
-          )}
         </form>
       </div>
     </section>

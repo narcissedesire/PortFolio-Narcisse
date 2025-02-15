@@ -8,6 +8,12 @@ export default function ProjectsSection() {
   const [tag, setTag] = useState("Tous");
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
+  const [expandedId, setExpandedId] = useState(null);
+
+  const handleExpand = (id) => {
+    setExpandedId(expandedId === id ? null : id);
+  };
+
   const handleTagChange = (newTag) => {
     setTag(newTag);
   };
@@ -23,7 +29,7 @@ export default function ProjectsSection() {
   return (
     <section ref={ref} id="projet">
       <h2 className="text-center text-4xl font-bold text-white mt-4 mb-8 md:mb-12">
-        My Project
+        Mes projets
       </h2>
       <div className="text-white flex flex-row justify-center items-center gap-2 py-6">
         <ProjectTag
@@ -53,11 +59,14 @@ export default function ProjectsSection() {
           >
             <ProjectCard
               key={project.id}
+              id={project.id}
               title={project.title}
               imageUrl={project.image}
               description={project.description}
               gitUrl={project.gitUrl}
               previewUrl={project.previewUrl}
+              isExpanded={expandedId === project.id} // Vérifie si cette carte est ouverte
+              onExpand={() => handleExpand(project.id)}
             />
           </motion.li>
         ))}

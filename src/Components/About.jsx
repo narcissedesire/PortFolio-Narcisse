@@ -25,7 +25,7 @@ export default function About() {
           </h2>
           <p className="text-base md:text-lg">
             Bonjour, je suis Narcisse Désiré, un développeur web full-stack. Je
-            suis en Master I à l'EMIT Fianarantsoa, j'ai acquis des compétences
+            suis en Master II à l'EMIT Fianarantsoa, j'ai acquis des compétences
             en utilisant des technologies comme CSS, TailwindCSS, JavaScript,
             ReactJS, Node-Express, NextJS, Laravel . Je suis enthousiaste à
             l'idée de créer des projets innovants et d'apprendre

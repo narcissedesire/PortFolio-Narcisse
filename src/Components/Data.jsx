@@ -59,7 +59,7 @@ export const tabdata = [
           />
         </span>
         <span>
-          <img src="/images/icons/next.png" className="w-20" alt="NextJS" />
+          <img src="/images/icons/next.png" className="w-20 bg-[#bbbbbb] p-1 rounded-full" alt="NextJS" />
         </span>
         <span>
           <img src="/images/icons/laravel.png" className="w-20" alt="Laravel" />

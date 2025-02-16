@@ -17,35 +17,55 @@ export const NavLink = [
   },
 ];
 
+export const certificates = [
+  {
+    title: "Responsive Web Design",
+    description:
+      "Certification en conception de sites web réactifs et adaptatifs.",
+    image: "/images/webdesign.png",
+  },
+  {
+    title: "JavaScript Algorithms and Data Structures",
+    description:
+      "Certification en algorithmes et structures de données en JavaScript.",
+    image: "/images/dataStructure.png",
+  },
+];
+
 export const tabdata = [
   {
     title: "Skills",
     id: "skills",
-    constent: (
+    content: (
       <ul className="list-disc pl-2 grid grid-cols-3 sm:grid-cols-4 md:grid-cols-3 lg:grid-cols-4 gap-3">
         <span>
-          <img src="/images/icons/js.webp" className="w-20" />
+          <img src="/images/icons/js.webp" className="w-20" alt="JavaScript" />
         </span>
         <span>
-          <img src="/images/icons/tailwind.webp" className="w-20" />
+          <img
+            src="/images/icons/tailwind.webp"
+            className="w-20"
+            alt="TailwindCSS"
+          />
         </span>
         <span>
-          <img src="/images/icons/react.webp" className="w-20" />
+          <img src="/images/icons/react.webp" className="w-20" alt="ReactJS" />
         </span>
         <span className="rounded-full bg-[#c5c5c5] w-20 h-20 relative">
           <img
             src="/images/icons/express.png"
             className="w-16 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+            alt="ExpressJS"
           />
         </span>
         <span>
-          <img src="/images/icons/next.png" className="w-20" />
+          <img src="/images/icons/next.png" className="w-20" alt="NextJS" />
         </span>
         <span>
-          <img src="/images/icons/laravel.png" className="w-20" />
+          <img src="/images/icons/laravel.png" className="w-20" alt="Laravel" />
         </span>
         <span>
-          <img src="/images/icons/mysql.svg" className="w-32" />
+          <img src="/images/icons/mysql.svg" className="w-32" alt="MySQL" />
         </span>
       </ul>
     ),
@@ -53,12 +73,31 @@ export const tabdata = [
   {
     title: "Education",
     id: "education",
-    constent: (
+    content: (
       <ul className="list-disc pl-2">
         <li>2024 : Master I</li>
         <li>2023 : Licence</li>
         <li>2019 : Baccalauréat</li>
       </ul>
+    ),
+  },
+  {
+    title: "Certificates",
+    id: "certificates",
+    content: (
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {certificates.map((certificate, index) => (
+          <div key={index} className="bg-[#2A2A2A] p-6 rounded-lg shadow-lg">
+            <img
+              src={certificate.image}
+              alt={certificate.title}
+              className="w-full h-48 object-cover rounded-t-lg"
+            />
+            <h3 className="text-xl font-semibold mt-4">{certificate.title}</h3>
+            <p className="text-gray-300 mt-2">{certificate.description}</p>
+          </div>
+        ))}
+      </div>
     ),
   },
 ];

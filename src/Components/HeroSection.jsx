@@ -1,8 +1,36 @@
-import React from "react";
+import React, { useState } from "react";
 import { TypeAnimation } from "react-type-animation";
 import { motion } from "framer-motion";
 
 export default function HeroSection() {
+  const [isDownloading, setIsDownloading] = useState(false);
+
+  const handleDownload = async () => {
+    setIsDownloading(true); // Désactive le bouton
+
+    try {
+      // Télécharge le fichier PDF
+      const response = await fetch("/CV/CV-Narcisse-DESIRE.pdf");
+      const blob = await response.blob();
+
+      // Crée un lien pour déclencher le téléchargement
+      const url = window.URL.createObjectURL(blob);
+      const link = document.createElement("a");
+      link.href = url;
+      link.download = "CV-Narcisse-DESIRE.pdf";
+      document.body.appendChild(link);
+      link.click();
+
+      // Nettoie le lien et réactive le bouton
+      document.body.removeChild(link);
+      window.URL.revokeObjectURL(url);
+    } catch (error) {
+      console.error("Erreur lors du téléchargement du fichier :", error);
+    } finally {
+      setIsDownloading(false); // Réactive le bouton
+    }
+  };
+
   return (
     <section className="lg:py-16" id="home">
       <div className="grid grid-cols-1 md:grid-cols-12 max-md:gap-8">
@@ -30,16 +58,17 @@ export default function HeroSection() {
             créer des applications qui allient esthétique et performance.
           </p>
           <div>
-            {/* <button className="px-6 py-3 w-full sm:w-fit rounded-full mr-4 bg-gradient-to-br from-primary-500 via-secondary-500 to-secondary-500 hover:bg-secondary-200 text-white">
-              Hire me
-            </button> */}
-            <a
-              href="/CV/CV-Narcisse-DESIRE.pdf" // Chemin vers le fichier CV dans le dossier public
-              download="CV-Narcisse-DESIRE.pdf"
-              className="px-5 py-3 w-full sm:w-fit rounded-full bg-primary-500 transition-all hover:bg-primary-800 text-white border mt-3"
+            <button
+              onClick={handleDownload}
+              disabled={isDownloading}
+              className={`px-5 py-3 w-full sm:w-fit rounded-full bg-primary-500 transition-all ${
+                isDownloading
+                  ? "opacity-50 cursor-not-allowed"
+                  : "hover:bg-primary-800"
+              } text-white border mt-3`}
             >
-              Télécharge CV
-            </a>
+              {isDownloading ? "Téléchargement en cours..." : "Télécharger CV"}
+            </button>
           </div>
         </motion.div>
         <motion.div
@@ -51,7 +80,7 @@ export default function HeroSection() {
           <div className="rounded-full bg-[#181818] w-[250px] h-[250px] lg:w-[400px] lg:h-[400px] relative">
             <img
               src="/images/person.png"
-              alt="hreo image"
+              alt="hero image"
               className="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 w-[170px] md:w-[250px] xl:w-[280px] h-auto"
             />
           </div>

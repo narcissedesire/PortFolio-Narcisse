@@ -69,7 +69,8 @@ export default function EmailSection() {
           Vous avez une idée en tête ? Je suis un développeur passionné et je
           serais ravi de vous aider à la concrétiser. N'hésitez pas à me
           contacter pour discuter de vos besoins et de cette idée. <br />
-          Tél : <span className="font-bold">+261 34 49 834 94</span>
+           Tél : <span className="font-bold">+261 34 49 834 94</span> <br />
+           E-mail : <span className="font-bold">narcissedesire4@gmail.com</span>
         </p>
         <div className="flex flex-row gap-5">
           <Link

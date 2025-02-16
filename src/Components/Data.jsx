@@ -17,35 +17,55 @@ export const NavLink = [
   },
 ];
 
+export const certificates = [
+  {
+    title: "Responsive Web Design",
+    description:
+      "Certification en conception de sites web réactifs et adaptatifs.",
+    image: "/images/webdesign.png",
+  },
+  {
+    title: "JavaScript Algorithms and Data Structures",
+    description:
+      "Certification en algorithmes et structures de données en JavaScript.",
+    image: "/images/dataStructure.png",
+  },
+];
+
 export const tabdata = [
   {
     title: "Skills",
     id: "skills",
-    constent: (
+    content: (
       <ul className="list-disc pl-2 grid grid-cols-3 sm:grid-cols-4 md:grid-cols-3 lg:grid-cols-4 gap-3">
         <span>
-          <img src="/images/icons/js.webp" className="w-20" />
+          <img src="/images/icons/js.webp" className="w-20" alt="JavaScript" />
         </span>
         <span>
-          <img src="/images/icons/tailwind.webp" className="w-20" />
+          <img
+            src="/images/icons/tailwind.webp"
+            className="w-20"
+            alt="TailwindCSS"
+          />
         </span>
         <span>
-          <img src="/images/icons/react.webp" className="w-20" />
+          <img src="/images/icons/react.webp" className="w-20" alt="ReactJS" />
         </span>
         <span className="rounded-full bg-[#c5c5c5] w-20 h-20 relative">
           <img
             src="/images/icons/express.png"
             className="w-16 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+            alt="ExpressJS"
           />
         </span>
         <span>
-          <img src="/images/icons/next.png" className="w-20" />
+          <img src="/images/icons/next.png" className="w-20" alt="NextJS" />
         </span>
         <span>
-          <img src="/images/icons/laravel.png" className="w-20" />
+          <img src="/images/icons/laravel.png" className="w-20" alt="Laravel" />
         </span>
         <span>
-          <img src="/images/icons/mysql.svg" className="w-32" />
+          <img src="/images/icons/mysql.svg" className="w-32" alt="MySQL" />
         </span>
       </ul>
     ),
@@ -53,12 +73,31 @@ export const tabdata = [
   {
     title: "Education",
     id: "education",
-    constent: (
+    content: (
       <ul className="list-disc pl-2">
         <li>2024 : Master I</li>
         <li>2023 : Licence</li>
         <li>2019 : Baccalauréat</li>
       </ul>
+    ),
+  },
+  {
+    title: "Certificates",
+    id: "certificates",
+    content: (
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {certificates.map((certificate, index) => (
+          <div key={index} className="bg-[#2A2A2A] p-6 rounded-lg shadow-lg">
+            <img
+              src={certificate.image}
+              alt={certificate.title}
+              className="w-full h-48 object-cover rounded-t-lg"
+            />
+            <h3 className="text-xl font-semibold mt-4">{certificate.title}</h3>
+            <p className="text-gray-300 mt-2">{certificate.description}</p>
+          </div>
+        ))}
+      </div>
     ),
   },
 ];
@@ -126,17 +165,17 @@ export const projectData = [
 
 💡 **Pourquoi ce projet ?**  
     Mon objectif était de créer une vitrine personnelle qui présente mes compétences, mes réalisations et ma vision en tant que développeur. J’ai utilisé **Tailwind CSS** pour concevoir une interface épurée, responsive et intuitive, tout en explorant les fonctionnalités de ce framework. J’ai également ajouté un backend pour gérer l’envoi d’e-mails via **SendGrid**, permettant aux visiteurs de me contacter directement depuis le site.
-    
+
     ✨ **Points forts du site :**  
     🔹 **Design moderne et professionnel** : Une mise en page claire et intuitive qui met en valeur mon travail.  
     🔹 **Interface 100% responsive** : Optimisée pour tous les appareils, du desktop au mobile.  
     🔹 **Présentation de mes projets** : Une section dédiée à mes réalisations, mettant en avant mes compétences en développement web.  
     🔹 **Intégration de SendGrid** : Un système backend pour envoyer des e-mails directement depuis le formulaire de contact.  
     🔹 **Utilisation de Tailwind CSS** : Un code propre, performant et facile à maintenir pour une expérience utilisateur fluide.  
-    
+
     🚀 **Ce que j’ai appris :**  
     Ce projet m’a permis de renforcer ma maîtrise de **Tailwind CSS** et d’explorer les bases du développement backend avec **Node.js** et **SendGrid**. J’ai également amélioré mes compétences en design responsive et en gestion de formulaires dynamiques. C’était une excellente opportunité de combiner apprentissage et créativité, tout en créant un site qui représente qui je suis et ce que je fais.  
-    
+
     Un pas de plus dans mon parcours de développement web, avec une touche backend pour aller encore plus loin ! 🚀`,
     image: "/images/imageProject/portfolio.png",
     tag: ["Tous", "Dinamiques"],

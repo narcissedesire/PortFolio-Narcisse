@@ -122,21 +122,22 @@ export const projectData = [
   {
     id: 5,
     title: "🌟 Portfolio de Narcisse Désiré - Développeur Web Passionné",
-    description: `J’ai conçu ce site statique pour mettre en avant mon parcours et mes projets tout en perfectionnant mes compétences en Tailwind CSS. Ce portfolio reflète ma passion pour le développement web et mon engagement à créer des interfaces modernes, esthétiques et performantes.
+    description: `J’ai conçu ce site pour mettre en avant mon parcours et mes projets, tout en perfectionnant mes compétences en développement web, notamment avec **Tailwind CSS** et **Node.js**. Ce portfolio incarne ma passion pour la création d’interfaces modernes, esthétiques et performantes, tout en intégrant désormais des fonctionnalités backend pour une expérience plus dynamique.
 
-💡 Pourquoi ce projet ?
-    Mon objectif était de créer une vitrine personnelle qui présente mes compétences, mes réalisations et ma vision en tant que développeur. J’ai utilisé Tailwind CSS pour concevoir une interface épurée, responsive et facile à naviguer, tout en explorant les fonctionnalités de ce framework.
-
-    ✨ Points forts du site :
-    🔹 Design moderne et professionnel, avec une mise en page claire et intuitive.
-    🔹 Interface 100% responsive, optimisée pour tous les appareils.
-    🔹 Présentation de mes projets, mettant en avant mes compétences en développement web.
-    🔹 Utilisation de Tailwind CSS pour un code propre, performant et facile à maintenir.
-
-    🚀 Ce que j’ai appris :
-    Ce projet m’a permis de renforcer ma maîtrise de Tailwind CSS et d’améliorer mes compétences en design responsive. J’ai également appris à structurer un portfolio de manière efficace pour mettre en valeur mon travail et mes aspirations professionnelles.
-
-    C’était une excellente opportunité de combiner apprentissage et créativité, tout en créant un site statique qui représente qui je suis et ce que je fais. Un pas de plus dans mon parcours de développement web ! 🚀`,
+💡 **Pourquoi ce projet ?**  
+    Mon objectif était de créer une vitrine personnelle qui présente mes compétences, mes réalisations et ma vision en tant que développeur. J’ai utilisé **Tailwind CSS** pour concevoir une interface épurée, responsive et intuitive, tout en explorant les fonctionnalités de ce framework. J’ai également ajouté un backend pour gérer l’envoi d’e-mails via **SendGrid**, permettant aux visiteurs de me contacter directement depuis le site.
+    
+    ✨ **Points forts du site :**  
+    🔹 **Design moderne et professionnel** : Une mise en page claire et intuitive qui met en valeur mon travail.  
+    🔹 **Interface 100% responsive** : Optimisée pour tous les appareils, du desktop au mobile.  
+    🔹 **Présentation de mes projets** : Une section dédiée à mes réalisations, mettant en avant mes compétences en développement web.  
+    🔹 **Intégration de SendGrid** : Un système backend pour envoyer des e-mails directement depuis le formulaire de contact.  
+    🔹 **Utilisation de Tailwind CSS** : Un code propre, performant et facile à maintenir pour une expérience utilisateur fluide.  
+    
+    🚀 **Ce que j’ai appris :**  
+    Ce projet m’a permis de renforcer ma maîtrise de **Tailwind CSS** et d’explorer les bases du développement backend avec **Node.js** et **SendGrid**. J’ai également amélioré mes compétences en design responsive et en gestion de formulaires dynamiques. C’était une excellente opportunité de combiner apprentissage et créativité, tout en créant un site qui représente qui je suis et ce que je fais.  
+    
+    Un pas de plus dans mon parcours de développement web, avec une touche backend pour aller encore plus loin ! 🚀`,
     image: "/images/imageProject/portfolio.png",
     tag: ["Tous", "Dinamiques"],
     gitUrl: "https://github.com/narcissedesire/PortFolio-Narcisse",

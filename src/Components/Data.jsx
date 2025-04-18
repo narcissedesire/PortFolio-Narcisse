@@ -225,26 +225,25 @@ export const projectData = [
 
     Frontend : ReactJS pour une interface dynamique et interactive.
 
-    Styling : Tailwind CSS pour un design moderne et responsive.
+    Backend : Laravel pour la gestion des API et des routes.
 
-    Backend : Express pour la gestion des API et des routes.
-
-    Base de données : MySQL avec Prisma ORM pour une gestion efficace et structurée des données.
+    Base de données : MySQL pour une gestion efficace et structurée des données.
 
     ✨ Points forts du projet :
     🔹 Expérience utilisateur fluide : Une interface intuitive et réactive, conçue avec React et Tailwind CSS.
     🔹 Fonctionnalités clés : Marché en ligne pour la vente et l’achat d’entreprises, recherche de co-fondateurs, et soutien aux transactions.
-    🔹 Backend robuste : Utilisation d’Express et Prisma pour une gestion performante des données et des utilisateurs.
+    🔹 Backend robuste : Utilisation de Laravel pour une gestion performante des données et des utilisateurs.
     🔹 Base de données relationnelle : MySQL pour stocker et gérer efficacement les informations.
 
     🚀 Ce que j’ai appris :
-    Ce projet m’a permis de consolider mes compétences en développement full-stack, en intégrant des technologies comme React, Tailwind CSS, Express, Prisma et MySQL. J’ai également approfondi ma compréhension de la conception d’applications web dynamiques et performantes.
+    Ce projet m’a permis de consolider mes compétences en développement full-stack, en intégrant des technologies comme React, Laravel et MySQL. J’ai également approfondi ma compréhension de la conception d’applications web dynamiques et performantes.
 
     Venture Connect représente une étape importante dans mon parcours académique et professionnel, alliant innovation, technicité et utilité. Une expérience enrichissante qui m’a préparé à relever des défis plus complexes dans le domaine du développement web. 🚀`,
     image: "/images/imageProject/ventureConnect.png",
     tag: ["Tous", "Dinamiques"],
-    gitUrl: "https://github.com/narcissedesire/ventureConnectNouveau",
-    previewUrl: "https://ventureconnectnouveau.onrender.com",
+    // gitUrl: "https://github.com/narcissedesire/ventureConnectNouveau",
+    previewUrl: "https://venture.grossiste.mg",
+    // previewUrl: "https://ventureconnectnouveau.onrender.com",
   },
 ];
 
